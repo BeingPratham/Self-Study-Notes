@@ -1,0 +1,51 @@
+1) String Methods in Javascript:- 
+Ans) 
+
+1) split(separator, limit): Splits a string into an array of substrings based on a specified separator.
+Code:- const str = 'apple,banana,orange';
+       console.log(str.split(',')); // Output: ['apple', 'banana', 'orange']
+
+2) toLowerCase(): Converts the string to lowercase.
+Code:- const str = 'HELLO';
+       console.log(str.toLowerCase()); // Output: 'hello'
+
+3) toUpperCase(): Converts the string to uppercase.
+Code:- const str = 'hello';
+       console.log(str.toUpperCase()); // Output: 'HELLO'
+
+4) substring(startIndex, endIndex): Similar to slice(), but doesn't accept negative indices.
+Code:- const str = 'Hello World';
+       console.log(str.substring(0, 5)); // Output: 'Hello'
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2) Javascript Number Methods:
+Ans)
+
+1) toExponential(): Converts a number into exponential notation.
+Code:- let num = 12345;
+console.log(num.toExponential(2)); // Output: 1.23e+4
+
+2) toFixed(): Formats a number using fixed-point notation with a specified number of digits after the decimal point.
+Code:- let num = 123.456789;
+console.log(num.toFixed(2)); // Output: 123.46
+
+3) toPrecision(): Formats a number using fixed-point or exponential notation, depending on the specified precision.
+Code:- let num = 123.456789;
+console.log(num.toPrecision(4)); // Output: 123.5
+
+4) toString(): Converts a number to a string.
+Code:- let num = 123;
+console.log(num.toString()); // Output: "123"
+
+5) parseInt(): Parses a string and returns an integer.
+Code:- let str = "123";
+console.log(parseInt(str)); // Output: 123
+
+6) parseFloat(): Parses a string and returns a floating-point number.
+Code:- let str = "123.45";
+console.log(parseFloat(str)); // Output: 123.45
+
+
+
+
