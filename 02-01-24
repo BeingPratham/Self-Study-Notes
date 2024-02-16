@@ -1,0 +1,42 @@
+1) Dynamic components in React.js :-
+Ans)
+
+1. Conditional Rendering:-
+
+import React from 'react';
+
+function App({ isLoggedIn }) {
+  return (
+    <div>
+      {isLoggedIn ? <LoggedInComponent /> : <LoggedOutComponent />}
+    </div>
+  );
+}
+
+function LoggedInComponent() {
+  return <h1>Welcome, User!</h1>;
+}
+
+function LoggedOutComponent() {
+  return <h1>Please Log In</h1>;
+}
+
+export default App;
+
+2. Mapping Data to Components:- 
+
+import React from 'react';
+
+function App({ items }) {
+  return (
+    <div>
+      {items.map(item => <ItemComponent key={item.id} item={item} />)}
+    </div>
+  );
+}
+
+function ItemComponent({ item }) {
+  return <div>{item.name}</div>;
+}
+
+export default App;
