@@ -1,0 +1,61 @@
+1) Filter in javascript:-
+Ans)
+
+In JavaScript, the filter() method is used to create a new array with all elements that pass a certain condition or criteria provided by a callback function.
+It does not modify the original array but returns a new array containing only the elements that satisfy the condition.
+
+let newArray = array.filter(callback(element, index, array), thisArg);
+callback: Function to test each element of the array. It takes three arguments:
+
+element: The current element being processed in the array.
+index (Optional): The index of the current element being processed.
+array (Optional): The array filter() was called upon.
+thisArg (Optional): Value to use as this when executing the callback function.
+
+Eg:- 
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let evenNumbers = numbers.filter(function(num) {
+    return num % 2 === 0;
+});
+
+console.log(evenNumbers); // Output: [2, 4, 6, 8, 10]
+
+2) Arrow function in Javascript:-
+Ans)
+
+let func = (param) => { /* function body */ };
+
+let func = (param1, param2) => { /* function body */ };
+
+let func = () => { /* function body */ };
+
+let func = (param) => expression;
+
+Eg:-
+function Person() {
+  this.age = 0;
+
+  setInterval(() => {
+    // 'this' refers to the Person object
+    this.age++;
+    console.log(this.age);
+  }, 1000);
+}
+
+let person = new Person();
+
+
+3) Hoisting in Javascript:-
+Ans)
+In JavaScript, a variable can be declared after it has been used.
+In other words; a variable can be used before it has been declared.
+
+Eg:- 
+x = 5; // Assign 5 to x
+
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x;                     // Display x in the element
+
+var x;
+
