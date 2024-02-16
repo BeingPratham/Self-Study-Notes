@@ -1,0 +1,52 @@
+Prop Drilling in React.js
+
+-> Prop drilling is a pattern in React.js where you pass down props from a parent component through one or more intermediate child components to a deeply nested child component that needs access to the props. 
+   While prop drilling is a straightforward and commonly used approach, it can lead to code that is harder to maintain, especially as the application grows larger and the component hierarchy becomes more complex.
+Eg:-
+
+// ParentComponent.js
+import React, { useState } from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const [value, setValue] = useState('');
+
+  return (
+    <div>
+      <ChildComponent value={value} setValue={setValue} />
+    </div>
+  );
+}
+
+export default ParentComponent;
+
+// ChildComponent.js
+import React from 'react';
+import GrandChildComponent from './GrandChildComponent';
+
+function ChildComponent({ value, setValue }) {
+  return (
+    <div>
+      <GrandChildComponent value={value} setValue={setValue} />
+    </div>
+  );
+}
+
+export default ChildComponent;
+
+// GrandChildComponent.js
+import React from 'react';
+
+function GrandChildComponent({ value, setValue }) {
+  return (
+    <div>
+      <input 
+        type="text" 
+        value={value} 
+        onChange={e => setValue(e.target.value)} 
+      />
+    </div>
+  );
+}
+
+export default GrandChildComponent;
