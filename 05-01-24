@@ -1,0 +1,40 @@
+Node.js Basics:-
+
+-> Node.js as a Web Server:-
+
+The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.
+Use the createServer() method to create an HTTP server:
+Eg:-
+var http = require('http');
+http.createServer(function (req, res) {
+  res.write('Hello World!'); //write a response to the client
+  res.end(); //end the response
+}).listen(8080); 
+
+-> Create a new file with Node.js:-
+
+Eg:-
+var fs = require('fs');
+fs.appendFile('mynewfile1.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
+-> Create a new empty file with open():-
+
+Eg:-
+var fs = require('fs');
+fs.open('mynewfile2.txt', 'w', function (err, file) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
+-> Delete file:- 
+
+Eg:-
+var fs = require('fs');
+
+fs.unlink('mynewfile2.txt', function (err) {
+  if (err) throw err;
+  console.log('File deleted!');
+});
