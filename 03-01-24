@@ -1,0 +1,70 @@
+Working with apis in react.js:- 
+
+1) Using Fetch API: The Fetch API is a modern browser feature for making HTTP requests. It is promise-based and provides a simpler and cleaner syntax.
+
+Eg:-
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    // Work with the fetched data
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('Error fetching data:', error);
+  });
+
+2) Using Axios: Axios is a popular JavaScript library for making HTTP requests in both browsers and Node.js environments. It provides a simpler and more flexible API than Fetch.
+
+Eg:-
+import axios from 'axios';
+
+axios.get('https://api.example.com/data')
+  .then(response => {
+    // Work with the fetched data
+    console.log(response.data);
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('Error fetching data:', error);
+  });
+
+3) Handling Loading and Errors
+
+Eg:-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function App() {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://api.example.com/data')
+      .then(response => {
+        setData(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  return (
+    <div>
+      <h1>API Data:</h1>
+      <ul>
+        {data.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
