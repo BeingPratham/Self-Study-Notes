@@ -1,0 +1,42 @@
+1) React js basic template:- 
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+function Hello(props) {
+  return <h1>Hello World!</h1>;
+}
+
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(<Hello />);
+
+2) JSX in react:-
+
+JSX stands for JavaScript XML.
+
+JSX allows us to write HTML in React.
+
+JSX makes it easier to write and add HTML in React.
+
+Eg:-
+const myElement = <h1>I Love JSX!</h1>;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
+
+3) Components in react:-
+
+-> Functional Component:
+Eg:- 
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+
+-> Class Component:
+Eg:-
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
