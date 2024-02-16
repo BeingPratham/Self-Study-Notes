@@ -1,0 +1,35 @@
+1) Arrays in Javascript:-
+Ans)
+
+let colors = ['red', 'green', 'blue'];
+let numbers = new Array(1, 2, 3, 4, 5);
+
+console.log(colors[0]); // Output: "red"
+console.log(numbers[2]); // Output: 3
+
+console.log(colors.length); // Output: 3
+
+colors.push('yellow');
+console.log(colors); // Output: ['red', 'green', 'blue', 'yellow']
+
+let removedColor = colors.pop();
+console.log(removedColor); // Output: "yellow"
+console.log(colors); // Output: ['red', 'green', 'blue']
+
+console.log(colors.indexOf('green')); // Output: 1
+
+numbers.sort() //Output: 1,2,3,4,5
+
+numbers.reverse() //Output: 5,4,3,2,1
+
+2) Regex in javascript:-
+Ans)
+
+-> . : Matches any single character except newline.
+-> ^ : Matches the beginning of a string.
+-> $ : Matches the end of a string.
+-> * : Matches zero or more occurrences of the preceding character.
+-> + : Matches one or more occurrences of the preceding character.
+-> ? : Matches zero or one occurrence of the preceding character.
+-> {} : Matches a specified number of occurrences.
+-> [] : Matches any one of the characters enclosed in the square brackets.
