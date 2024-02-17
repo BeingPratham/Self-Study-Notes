@@ -1,0 +1,31 @@
+MongoDb Basic Commands:-
+
+1) Create database: 
+use mydatabase
+
+2) Listing Databases:
+show dbs
+
+3) Creating a Collection:
+db.createCollection('mycollection')
+
+4)Inserting Documents:
+db.mycollection.insertMany([
+  { name: 'Jane', age: 25 },
+  { name: 'Alice', age: 35 }
+])
+
+5) Querying Documents:
+db.mycollection.find()
+
+6) Updating Documents:
+db.mycollection.updateOne(
+  { name: 'John' },
+  { $set: { age: 32 } }
+)
+
+7)  Deleting Documents:
+db.mycollection.deleteOne({ name: 'Jane' })
+
+8) Dropping a Database:
+db.dropDatabase()
