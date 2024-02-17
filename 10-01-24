@@ -1,0 +1,74 @@
+Integrating Frontend With Backend in MERN:-
+
+In Node.js we create all the apis and the website will be run on some specific port. Now to take the backend data in frontend we use Axios or fetch in React.js to interact with backend.
+
+Eg:-
+// routes/items.js
+const express = require('express');
+const router = express.Router();
+const Item = require('../models/Item');
+
+// Get all items
+router.get('/', async (req, res) => {
+  try {
+    const items = await Item.find();
+    res.json(items);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
+
+// Create a new item
+router.post('/', async (req, res) => {
+  const { name, description } = req.body;
+
+  try {
+    const newItem = new Item({
+      name,
+      description
+    });
+
+    const item = await newItem.save();
+    res.json(item);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
+
+module.exports = router;
+
+------React.js---------
+
+// components/Items.js
+import React, { useState, useEffect } from 'react';
+
+function Items() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/items')
+      .then(res => res.json())
+      .then(data => setItems(data))
+      .catch(err => console.error(err));
+  }, []);
+
+  return (
+    <div>
+      <h1>Items</h1>
+      <ul>
+        {items.map(item => (
+          <li key={item._id}>
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Items;
+
+
